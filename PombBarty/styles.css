@@ -1,0 +1,294 @@
+body {
+    background-image: radial-gradient(closest-side at 50% 60%, rgb(74,64,57), rgb(57, 53, 50));
+    transition: 200ms linear;
+}
+.bg-change {
+    background-image: radial-gradient(closest-side at 50% 60%, rgb(40, 151, 48), rgb(57, 53, 50));
+    transition: 200ms linear;
+}
+p {
+    font-family: Nunito;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+.top {
+    height: 40px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    font-size: 18px;
+    display: flex;
+}
+.link {
+    background-color: rgb(134,102,205);
+    height: 40px;
+    width: 196px;
+    display: inline-block;
+}
+.link-text {
+    padding: 8px 10px;
+}
+.stats {
+    background-color: rgb(120,85,199);
+    height: 40px;
+    display: flex;
+    flex: 1;
+}
+.playernumber {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px;
+}
+.pnumber {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 4px 10px;
+    font-size: 14px;
+}
+.name {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+.player-name {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-weight: 500;
+    font-family: Nunito;
+    outline: none;
+}
+.volume-icon {
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.volume-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.volume {
+    appearance: none;
+    background: rgba(0,0,0,0.3);
+    border-radius: 15px;
+    height: 8px;
+}
+.volume::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(67, 63, 82);
+    background: rgb(149,122,209);
+    cursor: pointer;
+}
+.owner {
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+}
+.open-chat {
+    background-color: rgb(134,102,205);
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.waiting {
+    height: 60px;
+    position: fixed;
+    top: 40px;
+    left: 0px;
+    right: 0px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.difficulty {
+    height: 90px;
+    position: fixed;
+    top: 90px;
+    left: 0px;
+    right: 0px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.edit-rules {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 1px solid white;
+    color: white;
+    font-family: Nunito;
+    font-size: 18px;
+    margin-left: 10px;
+    font-weight: bold;
+    transition: background-color 0.05s;
+    cursor: pointer;
+}
+.edit-rules:hover {
+    background-color: rgb(110,102,97);
+}
+.edit-rules:active {
+    background-color: rgb(60,52,46);
+}
+.logo {
+    display: flex;
+    margin-top: 170px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+.logo-bar {
+    display: solid;
+}
+.bomb-bar {
+    display: none;
+    position: relative;
+    margin-top: 120px;
+    justify-content: center;
+    align-items: center;
+}
+.logo-png {
+    width: 830px;
+}
+.pomb-png {
+    width: 100px;
+    margin-top: -10px;
+    z-index: 90;
+}
+.prompt {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+.game-timer {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    margin-bottom: -28px;
+    font-size: 10px;
+}
+.join-bar {
+    height: 70px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(49,43,38);
+}
+.start-bar {
+    display: flex;
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+.no-playername {
+    position: absolute;
+    top: -40px;
+    opacity: 0.8;
+}
+.join-button {
+    background-color: rgb(38,170,54);
+    color: white;
+    font-family: Nunito;
+    font-size: 20px;
+    border-radius: 30px;
+    border-style: none;
+    padding: 6px 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 3px rgba(0, 0, 0, 0.6);
+    transition: background-color 0.05s, margin-top 0.05s, box-shadow 0.05s;
+    cursor: pointer;
+}
+.join-button:hover {
+    background-color: rgb(61,189,49);
+}
+.join-button:active {
+    background-color: rgb(52, 151, 43);
+    margin-top: 4px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+}
+.leave-bar {
+    display: none;
+    z-index: 90;
+    justify-content: center;
+    align-items: center;
+}
+.leave-button {
+    background-color: rgb(255,90,90);
+    color: white;
+    font-family: Nunito;
+    font-size: 20px;
+    border-radius: 30px;
+    border-style: none;
+    padding: 6px 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 3px rgba(0, 0, 0, 0.6);
+    transition: background-color 0.05s, margin-top 0.05s, box-shadow 0.05s;
+    cursor: pointer;
+    margin-left: 20px;
+}
+.leave-button:hover {
+    background-color: rgb(255,116,116);
+}
+.leave-button:active {
+    background-color: rgb(255, 72, 72);
+    margin-top: 4px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+}
+.input-bar {
+    display: none;
+    z-index: 80;
+    justify-content: center;
+    align-items: center;
+}
+.score-bar {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 85px;
+    justify-content: center;
+    align-items: center;
+}
+.score-line {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+.input-space {
+    background-color: rgb(24,21,19);
+    border: none;
+    border-radius: 30px;
+    width: 600px;
+    height: 40px;
+    font-family: Nunito;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    outline: none;
+    text-transform: uppercase;
+}

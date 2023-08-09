@@ -1,0 +1,38 @@
+<html>
+<body>
+
+<button id="start">start</button>
+<button id="stop">stop</button>
+
+<p id=time>Press start to countdown!</p>
+
+<script>
+ 
+let timerId = 5;
+
+document.getElementById("start").onclick = function(){
+    document.getElementById("time").innerHTML = "Time: "+timerId.toString()+"s";
+    console.log(timerId);
+    timer = setInterval(function(){
+        timerId -= 1;
+        document.getElementById("time").innerHTML = "Time: "+timerId.toString()+"s";
+        console.log(timerId);
+        if (timerId == 0){
+            document.getElementById("time").innerHTML = "Start";
+            clearTimeout(timer);
+        }
+    }, 1000);
+}
+
+document.getElementById("stop").onclick = function(){
+    clearTimeout(timer);
+    timerId = 5;
+    document.getElementById("time").innerHTML = "Press start to countdown!";
+}
+
+
+
+</script>
+
+</body>
+</html>

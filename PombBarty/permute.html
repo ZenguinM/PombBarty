@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permute</title>
+</head>
+<body>
+    <input type="text" id="stringPerm">
+    <input type="button" id="button">
+    <p id="returnInput"></p>
+    <script>
+        document.getElementById("button").onclick = function(){
+            let permu = findPermutations(document.getElementById("stringPerm").value)
+            document.getElementById("returnInput").innerHTML = permu
+        }
+
+        let findPermutations = (string) => {
+            if (!string || typeof string !== "string"){
+                return "Please enter a string"
+            } else if (string.length < 2 ){
+                return string
+            }
+  
+            let permutationsArray = [] 
+     
+            for (let i = 0; i < string.length; i++){
+                let char = string[i]
+                let remainingChars = string.slice(0, i) + string.slice(i + 1, string.length)
+                for (let permutation of findPermutations(remainingChars)){
+                    permutationsArray.push(char + permutation)
+                }
+            }
+            return permutationsArray
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combo</title>
+</head>
+<body>
+    <input type="text" id="stringCombo">
+    <input type="button" id="button">
+    <script>
+
+    //3 letter prompts:
+
+    /*document.getElementById("button").onclick = function(){
+        char = document.getElementById("stringCombo").value;
+        for(let i = 0; i < char.length; i++){
+            returnChar1 = char.substr(i, 1)
+            for(let j = 0; j < char.length; j++){
+                returnChar2 = returnChar1.concat(char.substr(j, 1))
+                for(let k = 0; k < char.length; k++){
+                    returnChar3 = returnChar2.concat(char.substr(k, 1))
+                    console.log(returnChar3)
+                }
+            }
+        }
+    }*/
+
+    //2 letter prompts:
+
+    document.getElementById("button").onclick = function(){
+        char = document.getElementById("stringCombo").value;
+        for(let i = 0; i < char.length; i++){
+            returnChar1 = char.substr(i, 1)
+            for(let j = 0; j < char.length; j++){
+                returnChar2 = returnChar1.concat(char.substr(j, 1))
+                console.log(returnChar2)
+            }
+        }
+    }
+    
+    </script>
+</body>
+</html>

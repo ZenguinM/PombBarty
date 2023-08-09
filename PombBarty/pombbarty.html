@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PombBarty</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+</head>
+<body id="bg">
+    <div class="top" > 
+        <div class="link">
+            <p class="link-text">Domain/RoomId</p>
+        </div>
+        <div class="stats">
+            <div class="playernumber">
+                <p class="pnumber">1</p>
+            </div>
+            <div class="name">
+                <input type="text" class="player-name" placeholder="Enter player name" id="myPlayername" required autocomplete="off">
+            </div>
+            <div class="volume-icon">
+                <p>🔈</p>
+            </div>
+            <div class="volume-input">
+                <input type="range" class="volume">
+            </div>
+            <div class="owner">
+                <p>👑</p>
+            </div>
+        </div>
+        <div class="open-chat">
+            <p>◀️</p>
+        </div>
+    </div>
+    <div class="rule-sidebar">
+        
+    </div>
+    <div class="waiting" id="waitingBar">
+        <p id="waitingText" id="timer">⏳ Waiting for 1 more player...</p>
+    </div>
+    <div class="difficulty" id="difficultyBar">
+        <p>English (min. 1000 wpp)</p>
+        <button class="edit-rules" id="editRules">Edit rules</button>
+    </div>
+    <div class="logo">
+        <div class="logo-bar" id="logoBar">
+            <img src="Photos/PombBarty.png" class="logo-png" id="logoBP">
+        </div>
+        <div class="bomb-bar" id="bombBar">
+            <img src="Photos/Pomb.png" class="pomb-png" id="pombBP">
+            <p class="prompt" id="promptLetters">ABC</p>
+            <p class="game-timer" id="gameTimer">10.0s</p>
+        </div>
+    </div>
+    <div class="score-bar" id="scoreBar">
+        <p class="score-line" id="score">Score: 0</p>
+    </div>
+    <div class="join-bar">
+        <div class="start-bar" id="startBar">
+            <div class="no-playername">
+                <p id="playernameError"></p>
+            </div>
+            <button type="button" class="join-button" id="joinButton">Join game</button>
+        </div>
+        <div class="leave-bar" id="leaveBar">
+            <p>Ready your words...</p>
+            <button type="button" class="leave-button" id="leaveButton">Leave</button>
+        </div>
+        <div class="input-bar" id="inputBar" autofocus>
+            <input class="input-space" id="inputSpace" type="text" autocomplete="off" autocapitalize="characters">
+        </div>
+    </div>
+    <script src="pombbarty.js" type="module"></script>
+</body>
+</html>
