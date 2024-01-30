@@ -1,16 +1,25 @@
 body {
-    background-image: radial-gradient(closest-side at 50% 60%, rgb(74,64,57), rgb(57, 53, 50));
-    transition: 200ms linear;
-}
-.bg-change {
-    background-image: radial-gradient(closest-side at 50% 60%, rgb(40, 151, 48), rgb(57, 53, 50));
-    transition: 200ms linear;
+    background-image: radial-gradient(rgb(74,64,57), rgb(57, 53, 50));
+    height: 400px;
+    /*background-image: radial-gradient(rgb(57, 53, 50) 70%, rgb(40, 151, 48, 0.7));*/
+    background-position-y: 30px;
+    transition: backgroundImage 1s, background-image 1s;
 }
 p {
     font-family: Nunito;
     margin: 0;
     padding: 0;
     color: white;
+}
+.bg-response {
+    position: fixed;
+    background-image: none;
+    top: 40px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    transition: background-image 1s;
 }
 .top {
     height: 40px;
@@ -148,6 +157,144 @@ p {
 .edit-rules:active {
     background-color: rgb(60,52,46);
 }
+.rule-sidepanel {
+    width: 260px;
+    position: fixed;
+    top: 40px;
+    bottom: 0;
+    left: -260px;
+    z-index: 150;
+    background-color: rgba(0, 0, 0, 0.3);
+    overflow-y: hidden;
+    overflow-x: hidden;
+    transition: left 0.5s ease-in-out;
+}
+.centre-close-rules{
+    display: flex;
+    position: sticky;
+    align-items: center;
+    justify-content: center;
+    top: 0px;
+    height: 60px;
+}
+.rules {
+    display: block;
+}
+.wpp {
+    display: block;
+    appearance: none;
+    width: 206px;
+    height: 15px;
+    margin: 15px 0px 15px 0px;
+    border-radius: 7px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(255, 255, 255);
+    background: linear-gradient(to right, rgb(0, 255, 195, 0.7) 18%, rgba(0, 255, 51, 0.7) 53%, rgb(255, 255, 0, 0.7) 71%, rgb(255, 166, 0, 0.7) 86%,  rgb(255, 0, 0, 0.7) 95%);
+    cursor: pointer;
+}
+.wpp::-webkit-slider-thumb  {
+    display: block;
+    appearance: none;
+    width: 20px;
+    height: 16px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(255, 255, 255);
+    background: rgb(255, 255, 255);
+    cursor: pointer;
+}
+.lives, .max, .min {
+    display: block;
+    appearance: none;
+    width: 206px;
+    height: 15px;
+    margin: 15px 0px 15px 0px;
+    border-radius: 7px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0.7);
+}
+.lives::-webkit-slider-thumb, .max::-webkit-slider-thumb, .min::-webkit-slider-thumb  {
+    display: block;
+    appearance: none;
+    width: 20px;
+    height: 16px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(255, 255, 255);
+    background: rgb(255, 255, 255);
+    cursor: pointer;
+}
+.close-rules {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 1px solid white;
+    color: white;
+    font-family: Nunito;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.05s;
+    display: block;
+    position: absolute;
+    cursor: pointer;
+}
+.close-rules:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.close-rules:active {
+    background-color: rgb(60,52,46);
+}
+.rules-div {
+    top: 100px;
+    bottom: 0;
+    width: 260px;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+}
+.rules-div::-webkit-scrollbar {
+    width: 10px;
+}
+.rules-div::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.rules-div::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.rule-section {
+    background-color: rgba(0, 0, 0, 0.7);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.letter-lives {
+    display: none;
+    grid-template-columns: 25px 25px;
+    grid-template-rows: 25px 25px;
+    position: fixed;
+    width: 55px;
+    right: 15px;
+    top: 117px;
+    bottom: 93px;
+    column-gap: 5px;
+    row-gap: 4px;
+    z-index: 150;
+}
+.letter-grid {
+    font-family: Nunito;
+    display: block;
+    text-align: center;
+    background-color: rgb(230, 211, 118);
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
 .logo {
     display: flex;
     margin-top: 170px;
@@ -167,6 +314,15 @@ p {
 }
 .logo-png {
     width: 830px;
+}
+.lives-bar {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    margin-bottom: 150px;
+    font-size: 24px;
+    justify-content: center;
+    width: 165px;
 }
 .pomb-png {
     width: 100px;
@@ -197,7 +353,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(49,43,38);
+    background-color: rgba(49, 43, 38, 0.747)
 }
 .start-bar {
     display: flex;

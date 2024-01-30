@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <audio id="bomb-audio" src="Sound/bomb.wav"></audio>
+    <audio id="tick-audio" loop src="Sound/tick.wav"></audio>
+    <audio id="valid-audio" src="Sound/valid.wav"></audio>
 </head>
 <body id="bg">
     <div class="top" > 
@@ -35,21 +38,80 @@
             <p>◀️</p>
         </div>
     </div>
-    <div class="rule-sidebar">
-        
+    <div class="bg-response" id="bgRes">
+
     </div>
+    <div class="rule-sidepanel" id="ruleSidepanel">
+        <div class="centre-close-rules">
+            <button class="close-rules" id="closeRules">Save rules</button>
+        </div>
+        <div class="rules-div">
+            <div class="rule-section">
+                <p class="rules">Adjust minimum words per prompt (20000 - 100):</p>
+                <input type="range" min="0" max="19900" value="10000" step="100" class="wpp" id="wppValue">
+                <p class="rules" id="rulesWpp">Words per prompt: 10000</p>
+                <p class="rules" id="promptsValid">Number of prompts: <100</p>
+            </div>
+            <div class="rule-section">
+                <p class="rules">Adjust number of lives (1 - 5):</p>
+                <input type="range" min="1" max="5" value="3" step="1" class="lives" id="livesValue">
+                <p class="rules" id="rulesLives">Number of lives: 3</p>
+            </div>
+            <div class="rule-section">
+                <p class="rules">Adjust starting time (30 - 5):</p>
+                <input type="range" min="0" max="25" value="20" step="1" class="max" id="maxValue">
+                <p class="rules" id="rulesMax">Starting time: 10 seconds</p>
+            </div>
+            <div class="rule-section">
+                <p class="rules">Adjust minimum time (29 - 1):</p>
+                <input type="range" min="0" max="29" value="25" step="1" class="min" id="minValue">
+                <p class="rules" id="rulesMin">Minimum time: 5 seconds</p>
+            </div>
+        </div>
+    </div>
+    <div class="letter-lives" id="letterLives">
+        <div class="letter-grid" id="letterA">A</div>
+        <div class="letter-grid" id="letterN">N</div>
+        <div class="letter-grid" id="letterB">B</div>
+        <div class="letter-grid" id="letterO">O</div>
+        <div class="letter-grid" id="letterC">C</div>
+        <div class="letter-grid" id="letterP">P</div>
+        <div class="letter-grid" id="letterD">D</div>
+        <div class="letter-grid" id="letterQ">Q</div>
+        <div class="letter-grid" id="letterE">E</div>
+        <div class="letter-grid" id="letterR">R</div>
+        <div class="letter-grid" id="letterF">F</div>
+        <div class="letter-grid" id="letterS">S</div>
+        <div class="letter-grid" id="letterG">G</div>
+        <div class="letter-grid" id="letterT">T</div>
+        <div class="letter-grid" id="letterH">H</div>
+        <div class="letter-grid" id="letterU">U</div>
+        <div class="letter-grid" id="letterI">I</div>
+        <div class="letter-grid" id="letterV">V</div>
+        <div class="letter-grid" id="letterJ">J</div>
+        <div class="letter-grid" id="letterW">W</div>
+        <div class="letter-grid" id="letterK">K</div>
+        <div class="letter-grid" id="letterX">X</div>
+        <div class="letter-grid" id="letterL">L</div>
+        <div class="letter-grid" id="letterY">Y</div>
+        <div class="letter-grid" id="letterM">M</div>
+        <div class="letter-grid" id="letterZ">Z</div>
+    </div>
+
     <div class="waiting" id="waitingBar">
         <p id="waitingText" id="timer">⏳ Waiting for 1 more player...</p>
     </div>
     <div class="difficulty" id="difficultyBar">
-        <p>English (min. 1000 wpp)</p>
+        <p id="wppLine">English (min. 10000 wpp)</p>
         <button class="edit-rules" id="editRules">Edit rules</button>
     </div>
+
     <div class="logo">
         <div class="logo-bar" id="logoBar">
             <img src="Photos/PombBarty.png" class="logo-png" id="logoBP">
         </div>
         <div class="bomb-bar" id="bombBar">
+            <p class="lives-bar" id="livesBar"></p>
             <img src="Photos/Pomb.png" class="pomb-png" id="pombBP">
             <p class="prompt" id="promptLetters">ABC</p>
             <p class="game-timer" id="gameTimer">10.0s</p>
@@ -63,7 +125,7 @@
             <div class="no-playername">
                 <p id="playernameError"></p>
             </div>
-            <button type="button" class="join-button" id="joinButton">Join game</button>
+            <button type="button" class="join-button" id="joinButton" onclick="setTimeout(startGame, 1000)">Join game</button>
         </div>
         <div class="leave-bar" id="leaveBar">
             <p>Ready your words...</p>
