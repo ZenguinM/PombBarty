@@ -132,6 +132,9 @@ function newWord(){
     inGameTimerId = maxTime;
     if(maxTime > minTime){
         maxTime -= 0.1;
+        if(minTime > maxTime){
+            maxTime = minTime;
+        }
     }
     randomIndex = Math.floor(Math.random() * (Object.keys(validWords).length));
     document.getElementById("promptLetters").innerHTML = Object.keys(validWords)[randomIndex];
